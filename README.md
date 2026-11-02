@@ -4,7 +4,7 @@
 
 # LikeApplePLS
 
-Four Claude skills for people who present, launch, animate and edit, built on the way Apple makes its keynotes. Install the ones you need.
+Five Claude skills for people who present, launch, animate, edit and write, built on the way Apple makes its keynotes. Install the ones you need.
 
 Everyone can tell an Apple keynote when they see one. Saying what makes it work is harder, and "make it look like Apple" gets you big type on black and not much else.
 
@@ -18,10 +18,11 @@ What you make keeps your colors, your fonts, your product and your numbers. Noth
 | **[Product film](#product-film)** | A silent 1-2 minute product film, plus social cut-downs |
 | **[Motion design](#motion-design)** | How to animate each element, then the After Effects or EffectCraft script |
 | **[Video edit](#video-edit)** | Cuts your footage, assembles narrated chapters, reviews an edit |
+| **[Copywriting](#copywriting)** | Rewrites any text in the keynote register, or reviews it |
 
 ## Install
 
-Pick the skills you want. The installer lists the four and lets you check the ones to add:
+Pick the skills you want. The installer lists the five and lets you check the ones to add:
 
 ```bash
 npx skills@latest add sebmake/LikeApplePLS
@@ -43,6 +44,7 @@ claude plugin install sebmake-keynote-likeapple-pls@likeapplepls
 claude plugin install sebmake-videopresentation-likeapplepls@likeapplepls
 claude plugin install sebmake-motiondesign-likeapplepls@likeapplepls
 claude plugin install sebmake-videoedit-like-applepls@likeapplepls
+claude plugin install sebmake-copywriting-likeapplepls@likeapplepls
 ```
 
 On Claude.ai, upload the `.skill` file of each skill from the [latest release](https://github.com/sebmake/LikeApplePLS/releases/latest).
@@ -88,6 +90,17 @@ Needs Node 18 or later, Python 3.9 or later and ffmpeg, plus After Effects or Ef
 **[sebmake-videoedit-like-applepls](./sebmake-videoedit-like-applepls/SKILL.md)** cuts your footage the way Apple cuts the films in its keynotes, in FilmCraft (which it drives) or as an FCP7 XML or EDL for DaVinci Resolve and Premiere Pro. It also assembles pieces that are already made: rendered chapters, one voice file per line, subtitles, music that dips under the voice and sound effects, each on its own named track. And it reviews an edit you've already made, shot by shot, usually down to the timecode.
 
 Needs Python 3.9 or later with ffmpeg; footage analysis and the review also need numpy and Pillow (`python3 -m venv ~/.venv-videoedit && ~/.venv-videoedit/bin/pip install numpy pillow`).
+
+## Copywriting
+
+**[sebmake-copywriting-likeapplepls](./sebmake-copywriting-likeapplepls/SKILL.md)** rewrites an email, slide text, interface strings, a web page or a script the way the keynotes speak, in English or French, and hands back a table of what changed and why. Or it reviews a text without touching it. The rules come from the official transcripts of the eight keynotes (6,593 sentences in English, 3,008 in French): a median of 14.5 words per sentence, "you" about 30 times more often than "the user", the future tense in 7% of sentences. It keeps your facts as given and leaves anything missing as a placeholder.
+
+| Before | After |
+|---|---|
+| Click here to validate your order | Place order |
+| An error occurred, please try again later. | Payment declined. Check your card, then try again. |
+
+Needs Python 3.9 or later; no dependency.
 
 ## Voice-over
 
